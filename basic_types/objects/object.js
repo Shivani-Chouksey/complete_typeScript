@@ -17,3 +17,9 @@ function printCoord(pt) {
     console.log("The coordinate's y value is " + pt.y);
 }
 printCoord({ x: 100, y: 100 });
+var myUser = {
+    _id: "1234",
+    name: "text",
+    email: "gmail.com",
+    isActive: true
+};

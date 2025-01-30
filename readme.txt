@@ -29,3 +29,5 @@ command
 tsc file name 
 tsc
 tsc --wathc   ---for show runtime changes
+
+

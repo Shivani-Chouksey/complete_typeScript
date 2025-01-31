@@ -18,5 +18,28 @@ class UserDetail {
         this.name = name;
         this.userId = userId;
         this.city = "";
+        this._courseCount = 1;
+    }
+    // that method is also not accessable outside the class
+    deleteToken() {
+        console.log("Token Deleted");
+    }
+    get getAppleEmail() {
+        return `apple ${this.email}`;
+    }
+    // used for accessing the value of private
+    //  and public variables that is not accessable simple
+    //########getter
+    get courseCount() {
+        return this._courseCount;
+    }
+    //########setter
+    // setter not return any type of value and define using set keyword
+    // used to set value inside publice variable , here can not assign value derectly
+    set courseCount(courseNumber) {
+        if (courseNumber <= 1) {
+            throw new Error("Course count should be morethen a one ");
+        }
+        this._courseCount = courseNumber;
     }
 }

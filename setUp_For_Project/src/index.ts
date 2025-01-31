@@ -18,10 +18,39 @@ shivani.city = "mumbai";
 
 class UserDetail {
   readonly city: string = "";
+  private _courseCount = 1;
 
   constructor(
     public email: string,
     public name: string,
     private userId: number
   ) {}
+
+  // that method is also not accessable outside the class
+  private deleteToken() {
+    console.log("Token Deleted");
+  }
+
+  get getAppleEmail(): string {
+    return `apple ${this.email}`;
+  }
+
+  // used for accessing the value of private
+  //  and public variables that is not accessable simple
+
+  //########getter
+  get courseCount(): number {
+    return this._courseCount;
+  }
+
+  //########setter
+
+  // setter not return any type of value and define using set keyword
+  // used to set value inside publice variable , here can not assign value derectly
+  set courseCount(courseNumber) {
+    if (courseNumber <= 1) {
+      throw new Error("Course count should be morethen a one ");
+    }
+    this._courseCount = courseNumber;
+  }
 }

@@ -2,6 +2,7 @@
 class User {
     constructor(email, name) {
         this.city = "";
+        this.courseCountNumber = 1;
         this.dob = "22/22/22"; // using private variable dob not accessable outof the class only access that variable inside the class only
         this.email = email;
         this.name = name;
@@ -41,5 +42,18 @@ class UserDetail {
             throw new Error("Course count should be morethen a one ");
         }
         this._courseCount = courseNumber;
+    }
+}
+//inheritance\
+// this keyword " extends" inherit the parent class
+// it require all the property of parent except the private property
+class SubUser extends User {
+    constructor() {
+        super(...arguments);
+        this.isFamily = true;
+    }
+    changeCourseCount() {
+        // this.dob=4
+        this.courseCountNumber = 5;
     }
 }

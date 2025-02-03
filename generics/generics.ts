@@ -29,3 +29,17 @@ interface Bootle {
 }
 
 function indentityFive<Boolean>() {}
+
+function getSearchProducts<Type>(products: Type[]): Type {
+  // do some database operations
+  const myIndex = 3;
+  return products[myIndex];
+}
+
+// generic arrow method
+// <T,>  --- comma define that that is not an aordinary tag like h1,p tag ,not a jsx syntax , this is a generic
+const getMoreSearchProdcuts = <T>(products: T[]): T => {
+  // do some database operations
+  const myIndex = 3;
+  return products[myIndex];
+};

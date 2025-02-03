@@ -43,3 +43,39 @@ const getMoreSearchProdcuts = <T>(products: T[]): T => {
   const myIndex = 3;
   return products[myIndex];
 };
+
+function anotherFunction<T, U extends number>(valONe: T, valTwo: U): object {
+  return { valONe, valTwo };
+}
+
+anotherFunction(3, 4);
+
+interface DataBase {
+  connection: string;
+  userName: string;
+  password: string;
+}
+function anotherFunction2<T, U extends DataBase>(valONe: T, valTwo: U): object {
+  return { valONe, valTwo };
+}
+
+// anotherFunction2(3, {});
+
+//Class type generic
+interface Quiz {
+  name: string;
+  type: string;
+}
+interface Course {
+  name: string;
+  author: string;
+  subject: string;
+}
+
+// its a generic class
+class Sellable<T> {
+  public cart: T[] = [];
+  addToCart(product: T) {
+    this.cart.push(product);
+  }
+}
